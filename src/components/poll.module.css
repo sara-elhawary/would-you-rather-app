@@ -42,10 +42,8 @@
 .qInfo p {
   margin: 20px 0;
 }
-.q {
-  text-align: center;
-}
-.answerBtn {
+
+.qInfo button {
   color: white;
   background-color: #4dac37;
   border: none;

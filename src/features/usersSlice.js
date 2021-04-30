@@ -1,5 +1,9 @@
 import { createSlice } from '@reduxjs/toolkit'
 
+const RECEIVE_USERS = 'RECEIVE_USERS'
+const ADD_ANSWER_TO_USER = 'ADD_ANSWER_TO_USER'
+const ADD_QUESTION_TO_USER = 'ADD_QUESTION_TO_USER'
+
 export const users = createSlice({
   name: 'users',
   initialState: {

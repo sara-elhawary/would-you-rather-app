@@ -2,6 +2,8 @@ import React from 'react'
 
 import userAvatar from '../assets/icons/02.png'
 import classes from './poll.module.css'
+import PollBody from './poll-body'
+import PollAnswer from './poll-answer'
 
 export default function Poll() {
   return (
@@ -16,13 +18,8 @@ export default function Poll() {
             <img src={userAvatar} alt="" className={classes.userAvatar} />
           </div>
           <div className={classes.qInfo}>
-            <h4>Would you rather</h4>
-            <p className={classes.q}>
-              find $50 yourself
-              <br />
-              or...
-            </p>
-            <button className={classes.answerBtn}>Answer Poll</button>
+            <PollBody />
+            {/* <PollAnswer /> */}
           </div>
         </div>
       </div>
