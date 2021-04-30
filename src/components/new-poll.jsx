@@ -1,8 +1,18 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
+import { useSelector } from 'react-redux'
 
 import classes from './new-poll.module.css'
 
 export default function NewPoll() {
+  const [value, setValue] = useState('hey')
+  // const users = useSelector((state) => state.users)
+  // useEffect(() => {
+  //   console.log(users, value)
+  // })
+
+  // function handleSubmit(e) {
+  //   e.preventDefualt()
+  // }
   return (
     <div className={classes.newPoll}>
       <div className={classes.head}>

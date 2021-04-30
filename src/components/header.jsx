@@ -10,7 +10,7 @@ export default function Header() {
     <header className={classes.header}>
       <ul className={classes.menu}>
         <li className={classes.item}>
-          <Link className={classes.link} to="/home">
+          <Link className={classes.link} to="/">
             Home
           </Link>
         </li>

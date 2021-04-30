@@ -3,8 +3,8 @@
 .container {
   border-top: solid 2px #4dac37;
   border-radius: 8px;
-  width: 35%;
-  margin: 0 auto;
+  /* width: 35%; */
+  font-family: 'Montserrat';
 }
 .userCard {
   border: #d1cdcd solid 1px;
