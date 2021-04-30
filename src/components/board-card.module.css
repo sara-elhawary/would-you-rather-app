@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+.boardCard {
+  border: solid 1px #d1cdcd;
+  width: 35%;
+  margin: 0 auto;
+  overflow: hidden;
+  border-radius: 8px;
+  display: flex;
+  padding: 10px 0;
+  font-family: 'Montserrat';
+}
+.userInfoDiv {
+  display: flex;
+  /* border: red solid 1px; */
+  padding: 10px;
+  width: 70%;
+}
+.userInfo {
+  display: flex;
+  flex-direction: column;
+  border-left: #d1cdcd solid 1px;
+  border-right: #d1cdcd solid 1px;
+
+  padding: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+
+  width: 100%;
+}
+.userAvatarDiv {
+  margin-right: 20px;
+}
+.userAvatar {
+  width: 110px;
+}
+.qScore {
+  margin-top: 20px;
+}
+.q {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+}
+.hr {
+  color: #d1cdcd;
+  margin: 15px 0;
+}
+
+.scoreDiv {
+  /* border: red solid 1px; */
+  width: 20%;
+  text-align: center;
+  padding: 10px;
+}
+.userScore {
+  border: #d1cdcd solid 1px;
+  border-radius: 5px;
+  overflow: hidden;
+}
+.head {
+  border-bottom: #d1cdcd solid 1px;
+  background-color: #f3f4f5;
+  padding: 10px 0;
+}
+.score {
+  background-color: #4dac37;
+  color: white;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  padding: 0;
+  margin: 20px auto;
+  text-align: center;
+  font-size: 40px;
+}

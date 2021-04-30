@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+* {
+  padding: 0;
+  margin: 0;
+}
+.newPoll {
+  border: #d1cdcd solid 1px;
+  width: 35%;
+  margin: 20px auto;
+  border-radius: 8px;
+  overflow: hidden;
+  font-family: 'Montserrat';
+}
+.head {
+  border-bottom: #d1cdcd solid 1px;
+  background-color: #f3f4f5;
+  padding: 10px;
+}
+.newPollInfo {
+  padding: 10px;
+}
+.subtitle {
+  margin-top: 20px;
+}
+.form {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 0 10px;
+  /* border: red solid 1px; */
+  margin: 0 auto;
+}
+.input {
+  width: 95%;
+  margin: 10px 0;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: 1px #d1cdcd solid;
+}
+
+.btn {
+  width: 100%;
+  color: white;
+  font-weight: 700;
+  background-color: #4dac37;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 0;
+  margin-top: 20px;
+  font-size: 18px;
+}

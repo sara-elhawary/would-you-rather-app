@@ -1,0 +1,57 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+.header {
+  border-bottom: #d1cdcd solid 2px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin: 20px 30px;
+  padding: 10px 0;
+  font-family: 'Montserrat';
+}
+
+.menu {
+  list-style-type: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0;
+  margin: 5px;
+}
+.link {
+  display: inline;
+  text-align: center;
+  text-decoration: none;
+  color: black;
+  /* border: red solid 1px; */
+  margin-right: 15px;
+}
+.logout {
+  margin-right: 5px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.logoutBtn {
+  margin-left: 15px;
+  border: rgb(161, 159, 159) solid 1px;
+  padding: 10px 20px;
+  border-radius: 4px;
+  background-color: white;
+  color: rgb(99, 95, 95);
+}
+
+.authUserInfo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.authUserImg {
+  width: 30px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-right: 8px;
+}
