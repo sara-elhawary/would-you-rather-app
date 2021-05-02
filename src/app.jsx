@@ -1,7 +1,7 @@
-import React from 'react'
+import React, { useEffect } from 'react'
+import { useDispatch } from 'react-redux'
 import { render } from 'react-dom'
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
-import { createStore } from 'redux'
 import { Provider } from 'react-redux'
 
 import Header from './components/header'
@@ -10,32 +10,44 @@ import Login from './pages/login'
 import Home from './pages/home'
 import NewPoll from './pages/new-poll'
 import store from './store'
-import reducer from './reducers'
-
-// const store = createStore(reducer)
+import { getInitialData } from './utils/API'
+import { getUsers } from './slices/users'
+import { getQuestions } from './slices/questions'
 
 function App() {
+  const dispatch = useDispatch()
+
+  useEffect(() => {
+    getInitialData().then((data) => {
+      dispatch(getUsers(data))
+      dispatch(getQuestions(data))
+    })
+  }, [])
+
   return (
-    <Provider store={store}>
-      <BrowserRouter>
-        <Header />
-        <Switch>
-          <Route exact path="/">
-            <Home />
-          </Route>
-          <Route exact path="/new-poll">
-            <NewPoll />
-          </Route>
-          <Route exact path="/leader-board">
-            <LeaderBoard />
-          </Route>
-          <Route exact path="/login">
-            <Login />
-          </Route>
-        </Switch>
-      </BrowserRouter>
-    </Provider>
+    <BrowserRouter>
+      <Header />
+      <Switch>
+        <Route exact path="/">
+          <Home />
+        </Route>
+        <Route exact path="/new-poll">
+          <NewPoll />
+        </Route>
+        <Route exact path="/leader-board">
+          <LeaderBoard />
+        </Route>
+        <Route exact path="/login">
+          <Login />
+        </Route>
+      </Switch>
+    </BrowserRouter>
   )
 }
 
-render(<App />, document.querySelector('#app'))
+render(
+  <Provider store={store}>
+    <App />
+  </Provider>,
+  document.querySelector('#app')
+)
