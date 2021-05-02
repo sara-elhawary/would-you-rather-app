@@ -3,6 +3,7 @@ import {
   _getQuestions,
   _saveQuestion,
   _saveQuestionAnswer,
+  formatQuestion,
 } from './_DATA'
 
 export function getInitialData() {
@@ -22,3 +23,5 @@ export function saveQuestionAnswer(authUser, qid, answer) {
   // @ts-ignore
   return _saveQuestionAnswer({ authUser, qid, answer })
 }
+
+export { formatQuestion }
