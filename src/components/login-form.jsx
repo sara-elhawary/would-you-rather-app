@@ -1,4 +1,5 @@
 import React from 'react'
+import { useSelector } from 'react-redux'
 
 import classes from './login-form.module.css'
 import img1 from '../assets/icons/01.png'
@@ -10,6 +11,8 @@ import img6 from '../assets/icons/06.png'
 import img7 from '../assets/icons/07.png'
 
 export default function LoginForm() {
+  const users = Object.keys(useSelector((state) => state.users.value))
+  // console.log(users)
   return (
     <div className={classes.container}>
       <div className={classes.head}>
@@ -27,13 +30,13 @@ export default function LoginForm() {
       </div>
       <div className={classes.form}>
         <h1>Sign In</h1>
-        {/* <input type="text" placeholder="Select a Friend" /> */}
         <select name="users">
           <option value="">Select a Friend</option>
-          <option value="user 1">user 1</option>
-          <option value="user 2">user 2</option>
-          <option value="user 3">user 3</option>
-          <option value="user 4">user 4</option>
+          {users.map((user) => (
+            <option key={user} value={user}>
+              {user}
+            </option>
+          ))}
         </select>
         <button className={classes.btn}>Login</button>
       </div>
