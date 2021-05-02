@@ -8,11 +8,12 @@ import Header from './components/header'
 import LeaderBoard from './pages/leaderboard'
 import Login from './pages/login'
 import Home from './pages/home'
+import NoMatch from './pages/404'
 import NewPoll from './pages/new-poll'
 import store from './store'
 import { getInitialData } from './utils/API'
 import { getUsers } from './slices/users'
-import { getQuestions } from './slices/questions'
+import { setQuestions } from './slices/questions'
 
 function App() {
   const dispatch = useDispatch()
@@ -20,7 +21,7 @@ function App() {
   useEffect(() => {
     getInitialData().then((data) => {
       dispatch(getUsers(data))
-      dispatch(getQuestions(data))
+      dispatch(setQuestions(data))
     })
   }, [])
 
@@ -28,6 +29,9 @@ function App() {
     <BrowserRouter>
       <Header />
       <Switch>
+        <Route exact path="/404">
+          <NoMatch />
+        </Route>
         <Route exact path="/">
           <Home />
         </Route>
