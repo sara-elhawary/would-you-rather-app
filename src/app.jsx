@@ -12,7 +12,7 @@ import NoMatch from './pages/404'
 import NewPoll from './pages/new-poll'
 import store from './store'
 import { getInitialData } from './utils/API'
-import { getUsers } from './slices/users'
+import { setUsers } from './slices/users'
 import { setQuestions } from './slices/questions'
 
 function App() {
@@ -20,7 +20,7 @@ function App() {
 
   useEffect(() => {
     getInitialData().then((data) => {
-      dispatch(getUsers(data))
+      dispatch(setUsers(data))
       dispatch(setQuestions(data))
     })
   }, [])

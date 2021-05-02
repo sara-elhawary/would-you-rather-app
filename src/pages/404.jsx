@@ -7,7 +7,7 @@ export default function NoMatch() {
   return (
     <div className={classes.container}>
       <h1>404</h1>
-      <h4>We are sorry,but the page you are looking for does not exist!</h4>
+      <h4>We are sorry, but the page you are looking for does not exist!</h4>
       <Link to="/" className={classes.link}>
         Home
       </Link>

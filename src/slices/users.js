@@ -6,31 +6,31 @@ export const usersSlice = createSlice({
     value: {},
   },
   reducers: {
-    getUsers: (state, action) => {
+    setUsers: (state, action) => {
       state.value = action.payload.users
     },
-    addQuestion: (state, action) => {
-      const authedUser = action.payload.authedUser
-      const questionId = action.payload.qid
+    addQuestionToUser: (state, action) => {
+      const author = action.payload.author
+      const id = action.payload.id
 
-      state.value = {
-        [authedUser]: action.payload.users[authedUser],
-        questions: [action.payload.users[authedUser].questions, questionId],
-      }
+      state.value[author].questions.push(id)
     },
-    answerQuestion: (state, action) => {
+    addAnswerToQuestion: (state, action) => {
       const authedUser = action.payload.authedUser
-      const questionId = action.payload.qid
+      const qid = action.payload.qid
+      const answer = action.payload.answer
 
-      state.value = {
-        [action.payload.authedUser]: action.payload.users[authedUser],
-        answers: action.payload.users[authedUser].answers,
-        [questionId]: action.payload.answer,
+      state.value[authedUser].answer = {
+        [qid]: answer,
       }
     },
   },
 })
 
-export const { getUsers, addQuestion, answerQuestion } = usersSlice.actions
+export const {
+  setUsers,
+  addQuestionToUser,
+  addAnswerToQuestion,
+} = usersSlice.actions
 
 export default usersSlice.reducer

@@ -7,7 +7,7 @@ export const authUserSlice = createSlice({
   },
   reducers: {
     setAuthUser: (state, action) => {
-      state.value = action.payload.id
+      state.value = action.payload.userId
     },
     removeAuthUser: (state, action) => {
       state.value = null
