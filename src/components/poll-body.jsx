@@ -2,7 +2,7 @@ import React from 'react'
 
 import classes from './poll-body.module.css'
 
-export default function PollBody() {
+export default function PollBody({ onAnswer }) {
   return (
     <div>
       <h4>Would you rather</h4>
@@ -13,7 +13,9 @@ export default function PollBody() {
           or...
         </p>
       </div>
-      <button className={classes.answerBtn}>Answer Poll</button>
+      <button className={classes.answerBtn} onClick={onAnswer}>
+        Answer Poll
+      </button>
     </div>
   )
 }
