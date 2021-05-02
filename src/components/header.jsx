@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faSignOutAlt } from '@fortawesome/free-solid-svg-icons'
 
 import classes from './header.module.css'
 import authUserImg from '../assets/icons/01.png'
@@ -30,14 +31,20 @@ export default function Header() {
           </Link>
         </li>
       </ul>
-      <div className={classes.logout}>
+      <div className={classes.auth}>
         <div className={classes.authUserInfo}>
           <img src={authUserImg} className={classes.authUserImg} />
           <span>Peter</span>
         </div>
-
-        {/* <FontAwesomeIcon icon={['fas', 'sign-out-alt']} /> */}
-        <button className={classes.logoutBtn}>Logout</button>
+        <div className={classes.logout}>
+          <p className={classes.logoutBtn}>Logout</p>
+          <div className={classes.iconDiv}>
+            <FontAwesomeIcon
+              icon={faSignOutAlt}
+              className={classes.signOutIcon}
+            />
+          </div>
+        </div>
       </div>
     </header>
   )
