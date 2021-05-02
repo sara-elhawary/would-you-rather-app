@@ -9,9 +9,28 @@ export const usersSlice = createSlice({
     getUsers: (state, action) => {
       state.value = action.payload.users
     },
+    addQuestion: (state, action) => {
+      const authedUser = action.payload.authedUser
+      const questionId = action.payload.qid
+
+      state.value = {
+        [authedUser]: action.payload.users[authedUser],
+        questions: [action.payload.users[authedUser].questions, questionId],
+      }
+    },
+    answerQuestion: (state, action) => {
+      const authedUser = action.payload.authedUser
+      const questionId = action.payload.qid
+
+      state.value = {
+        [action.payload.authedUser]: action.payload.users[authedUser],
+        answers: action.payload.users[authedUser].answers,
+        [questionId]: action.payload.answer,
+      }
+    },
   },
 })
 
-export const { getUsers } = usersSlice.actions
+export const { getUsers, addQuestion, answerQuestion } = usersSlice.actions
 
 export default usersSlice.reducer
