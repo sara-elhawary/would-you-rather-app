@@ -22,7 +22,7 @@ export default function Poll(props) {
         <div className={classes.cardBody}>
           <div>
             <img
-              src={'../assets/icons/01.png'.replace('..', '')}
+              src={`assets/icons/${author}.png`}
               alt=""
               className={classes.userAvatar}
             />

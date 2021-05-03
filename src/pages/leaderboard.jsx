@@ -15,6 +15,7 @@ export default function LeaderBoard() {
           answers={Object.keys(user.answers).length}
           key={user.id}
           name={user.name}
+          id={user.id}
         />
       ))}
     </div>

@@ -1,16 +1,20 @@
 import React from 'react'
 
 import classes from './board-card.module.css'
-import img1 from '/assets/icons/02.png'
+// import img1 from '/assets/icons/02.png'
 
-export default function BoardCard({ name, questions, answers }) {
+export default function BoardCard({ name, questions, answers, id }) {
   const score = questions + answers
 
   return (
     <div className={classes.boardCard}>
       <div className={classes.userInfoDiv}>
         <div className={classes.userAvatarDiv}>
-          <img src={img1} alt="" className={classes.userAvatar} />
+          <img
+            src={`assets/icons/${id}.png`}
+            alt=""
+            className={classes.userAvatar}
+          />
         </div>
         <div className={classes.userInfo}>
           <div className={classes.userName}>
