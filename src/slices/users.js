@@ -20,7 +20,7 @@ export const usersSlice = createSlice({
       const qid = action.payload.qid
       const answer = action.payload.answer
 
-      state.value[authedUser].answer = {
+      state.value[authedUser].answers = {
         [qid]: answer,
       }
     },
