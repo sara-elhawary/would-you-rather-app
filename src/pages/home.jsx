@@ -8,8 +8,8 @@ export default function Home() {
   //users cuz of reducer name
   const users = Object.values(useSelector((state) => state.users.value))
   const questions = Object.values(useSelector((state) => state.questions.value))
-  console.log(questions)
-  // console.log(users)
+  // console.log(questions)
+  console.log(users)
 
   return (
     <div className={classes.container}>

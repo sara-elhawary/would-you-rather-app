@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { useSelector } from 'react-redux'
+import { useHistory } from 'react-router-dom'
 
 import classes from './new-poll.module.css'
 import { formatQuestion } from '../utils/API'
@@ -13,6 +14,7 @@ export default function NewPoll(props) {
   const [optionTwo, setOptionTwo] = useState('')
 
   const dispatch = useDispatch()
+  const history = useHistory()
 
   //change handlers for inputs(handleOptionOneChange,...)
 
@@ -33,6 +35,7 @@ export default function NewPoll(props) {
     dispatch(addQuestion(question))
     // console.log('submitted')
     console.log(questions)
+    history.push('/')
   }
   const isDisabled = () => !optionOne || !optionTwo
 
