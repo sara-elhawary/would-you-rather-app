@@ -1,7 +1,9 @@
-import React, { useEffect } from 'react'
+import React, { Fragment, useEffect } from 'react'
+import { useSelector } from 'react-redux'
+
 import { useDispatch } from 'react-redux'
 import { render } from 'react-dom'
-import { BrowserRouter, Route, Switch } from 'react-router-dom'
+import { BrowserRouter, Redirect, Route, Switch } from 'react-router-dom'
 import { Provider } from 'react-redux'
 
 import Header from './components/header'
@@ -14,9 +16,16 @@ import store from './store'
 import { getInitialData } from './utils/API'
 import { setUsers } from './slices/users'
 import { setQuestions } from './slices/questions'
+import PollAnswer from './components/poll-answer'
 
 function App() {
   const dispatch = useDispatch()
+  const state = useSelector((state) => state)
+  // const authUser = useSelector((state) => state.authUser.value)
+  const authUser = 'Leen'
+  // console.log(authUser)
+
+  // console.log(state)
 
   useEffect(() => {
     getInitialData().then((data) => {
@@ -27,24 +36,35 @@ function App() {
 
   return (
     <BrowserRouter>
-      <Header />
-      <Switch>
-        <Route exact path="/404">
-          <NoMatch />
-        </Route>
-        <Route exact path="/">
-          <Home />
-        </Route>
-        <Route exact path="/new-poll">
-          <NewPoll />
-        </Route>
-        <Route exact path="/leader-board">
-          <LeaderBoard />
-        </Route>
-        <Route exact path="/login">
-          <Login />
-        </Route>
-      </Switch>
+      {authUser === null ? (
+        <Fragment>
+          <Route exact path="/login">
+            <Login />
+          </Route>
+          <Redirect to="/login" />
+        </Fragment>
+      ) : (
+        <Fragment>
+          <Header authUser={authUser} />
+          <Switch>
+            <Route exact path="/404">
+              <NoMatch />
+            </Route>
+            <Route exact path="/">
+              <Home />
+            </Route>
+            <Route exact path="/new-poll">
+              <NewPoll />
+            </Route>
+            <Route exact path="/leader-board">
+              <LeaderBoard />
+            </Route>
+            <Route exact path="/question/:id">
+              <PollAnswer />
+            </Route>
+          </Switch>
+        </Fragment>
+      )}
     </BrowserRouter>
   )
 }
