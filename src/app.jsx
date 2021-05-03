@@ -22,7 +22,7 @@ function App() {
   const dispatch = useDispatch()
   const state = useSelector((state) => state)
   // const authUser = useSelector((state) => state.authUser.value)
-  const authUser = 'Leen'
+  const authUser = 'sarahedo'
   // console.log(authUser)
 
   // console.log(state)

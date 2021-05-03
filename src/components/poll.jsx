@@ -39,16 +39,6 @@ export default function Poll(props) {
             <Link to={`question/${id}`}>
               <button className={classes.answerBtn}>Answer Poll</button>
             </Link>
-            {/* {step === 'body' && (
-              <PollBody
-                optionOne={optionOne}
-                onAnswer={() => setStep('answer')}
-              />
-            )}
-            {step === 'answer' && (
-              <PollAnswer optionOne={optionOne} optionTwo={optionTwo} />
-            )}
-            {step === 'result' && <PollResult />} */}
           </div>
         </div>
       </div>

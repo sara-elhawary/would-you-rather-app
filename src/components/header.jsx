@@ -4,11 +4,10 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSignOutAlt } from '@fortawesome/free-solid-svg-icons'
 
 import classes from './header.module.css'
-import authUserImg from '/assets/icons/01.png'
 
 export default function Header({ authUser }) {
   return (
-    <header className={classes.header}>
+    <div className={classes.header}>
       <ul className={classes.menu}>
         <li className={classes.item}>
           <Link className={classes.link} to="/">
@@ -33,7 +32,10 @@ export default function Header({ authUser }) {
       </ul>
       <div className={classes.auth}>
         <div className={classes.authUserInfo}>
-          <img src={authUserImg} className={classes.authUserImg} />
+          <img
+            src={`assets/icons/${authUser}.png`}
+            className={classes.authUserImg}
+          />
           <span>{authUser}</span>
         </div>
         <div className={classes.logout}>
@@ -46,6 +48,6 @@ export default function Header({ authUser }) {
           </div>
         </div>
       </div>
-    </header>
+    </div>
   )
 }

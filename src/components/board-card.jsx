@@ -1,7 +1,6 @@
 import React from 'react'
 
 import classes from './board-card.module.css'
-// import img1 from '/assets/icons/02.png'
 
 export default function BoardCard({ name, questions, answers, id }) {
   const score = questions + answers
@@ -12,7 +11,7 @@ export default function BoardCard({ name, questions, answers, id }) {
         <div className={classes.userAvatarDiv}>
           <img
             src={`assets/icons/${id}.png`}
-            alt=""
+            alt="profile-img"
             className={classes.userAvatar}
           />
         </div>
