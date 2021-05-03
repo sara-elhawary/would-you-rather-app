@@ -1,9 +1,11 @@
 import React from 'react'
 
 import classes from './board-card.module.css'
-import img1 from '../assets/icons/02.png'
+import img1 from '/assets/icons/02.png'
 
-export default function BoardCard() {
+export default function BoardCard({ name, questions, answers }) {
+  const score = questions + answers
+
   return (
     <div className={classes.boardCard}>
       <div className={classes.userInfoDiv}>
@@ -12,17 +14,17 @@ export default function BoardCard() {
         </div>
         <div className={classes.userInfo}>
           <div className={classes.userName}>
-            <h3>Brittini</h3>
+            <h3>{name}</h3>
           </div>
           <div className={classes.qScore}>
             <div className={classes.q}>
               <p>Answered Questions</p>
-              <p>4</p>
+              <p>{answers}</p>
             </div>
             <hr className={classes.hr} />
             <div className={classes.q}>
               <p>Created Questions</p>
-              <p>4</p>
+              <p>{questions}</p>
             </div>
           </div>
         </div>
@@ -33,7 +35,7 @@ export default function BoardCard() {
             <h4>Score</h4>
           </div>
           <div className={classes.score}>
-            <h4>8</h4>
+            <h4>{score}</h4>
           </div>
         </div>
       </div>
