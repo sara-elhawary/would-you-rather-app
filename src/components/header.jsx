@@ -4,9 +4,9 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSignOutAlt } from '@fortawesome/free-solid-svg-icons'
 
 import classes from './header.module.css'
-import authUserImg from '../assets/icons/01.png'
+import authUserImg from '/assets/icons/01.png'
 
-export default function Header() {
+export default function Header({ authUser }) {
   return (
     <header className={classes.header}>
       <ul className={classes.menu}>
@@ -26,15 +26,15 @@ export default function Header() {
           </Link>
         </li>
         <li className={classes.menuItem}>
-          <Link className={classes.link} to="/login">
-            Login
+          <Link className={classes.link} to="/404">
+            404
           </Link>
         </li>
       </ul>
       <div className={classes.auth}>
         <div className={classes.authUserInfo}>
           <img src={authUserImg} className={classes.authUserImg} />
-          <span>Peter</span>
+          <span>{authUser}</span>
         </div>
         <div className={classes.logout}>
           <p className={classes.logoutBtn}>Logout</p>

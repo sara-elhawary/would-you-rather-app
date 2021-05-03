@@ -1,14 +1,10 @@
 import React, { useState } from 'react'
 import { useSelector } from 'react-redux'
+import { Link } from 'react-router-dom'
 
-import avatar1 from '../assets/icons/01.png'
-import avatar2 from '../assets/icons/02.png'
-import avatar3 from '../assets/icons/03.png'
 import classes from './poll.module.css'
 import PollAnswer from './poll-answer'
 import PollResult from './poll-result'
-
-const avatars = { sarahedo: avatar1, tylermcginnis: avatar2, johndoe: avatar3 }
 
 export default function Poll(props) {
   // const [step, setStep] = useState('body')
@@ -25,7 +21,11 @@ export default function Poll(props) {
 
         <div className={classes.cardBody}>
           <div>
-            <img src={avatars[id]} alt="" className={classes.userAvatar} />
+            <img
+              src={'../assets/icons/01.png'.replace('..', '')}
+              alt=""
+              className={classes.userAvatar}
+            />
           </div>
           <div className={classes.qInfo}>
             <h4>Would you rather</h4>
@@ -36,7 +36,9 @@ export default function Poll(props) {
                 or...
               </p>
             </div>
-            <button className={classes.answerBtn}>Answer Poll</button>
+            <Link to={`question/${id}`}>
+              <button className={classes.answerBtn}>Answer Poll</button>
+            </Link>
             {/* {step === 'body' && (
               <PollBody
                 optionOne={optionOne}
