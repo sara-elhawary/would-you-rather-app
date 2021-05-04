@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link, useHistory } from 'react-router-dom'
+import { NavLink, useHistory } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSignOutAlt } from '@fortawesome/free-solid-svg-icons'
@@ -21,20 +21,33 @@ export default function Header({ authUser }) {
     <div className={classes.header}>
       <ul className={classes.menu}>
         <li className={classes.item}>
-          <Link className={classes.link} to="/">
+          <NavLink
+            exact
+            to="/"
+            className={classes.link}
+            activeStyle={{ color: '#4dac37' }}
+          >
             Home
-          </Link>
+          </NavLink>
         </li>
 
         <li className={classes.menuItem}>
-          <Link className={classes.link} to="/add">
+          <NavLink
+            className={classes.link}
+            to="/add"
+            activeStyle={{ color: '#4dac37' }}
+          >
             New Poll
-          </Link>
+          </NavLink>
         </li>
         <li className={classes.menuItem}>
-          <Link className={classes.link} to="/leaderboard">
+          <NavLink
+            className={classes.link}
+            to="/leaderboard"
+            activeStyle={{ color: '#4dac37' }}
+          >
             Leader Board
-          </Link>
+          </NavLink>
         </li>
       </ul>
       <div className={classes.auth}>

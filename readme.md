@@ -9,7 +9,6 @@ This app is the last of three projects required for FWD Egypt Initiative
 ## Table of contents
 
 - [Installation](#installation)
-- [Built with](#built with)
 - [Usage](#usage)
 - [Screenshots](#screenshots)
 
@@ -23,7 +22,7 @@ $ cd would-you-rather-app
 $ npm i
 ```
 
-## Built with
+## Built using
 
 - React
 - React-Redux
