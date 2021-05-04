@@ -41,7 +41,7 @@ export default function PollResult({
       <div className={classes.cardBody}>
         <div className={classes.imgDiv}>
           <img
-            src={`../assets/icons/${author}.png`}
+            src={`/assets/icons/${author}.png`}
             alt=""
             className={classes.authorAvatar}
           />

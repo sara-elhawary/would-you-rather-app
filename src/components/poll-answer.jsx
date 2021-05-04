@@ -54,7 +54,7 @@ export default function PollAnswer() {
             <div className={classes.cardBody}>
               <div>
                 <img
-                  src={`../assets/icons/${author}.png`}
+                  src={`/assets/icons/${author}.png`}
                   alt="author-img"
                   className={classes.userAvatar}
                 />
