@@ -10,7 +10,7 @@ export default function Home() {
   const [showDefault, setShowDefault] = useState(true)
   const authUser = useSelector((state) => state.authUser.value)
   const questions = Object.values(useSelector((state) => state.questions.value))
-  // console.log(questions)
+  console.log(questions)
 
   const answeredQuestions = questions
     .sort(sortBy('-timestamp'))

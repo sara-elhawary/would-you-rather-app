@@ -1,15 +1,18 @@
 import React from 'react'
 import { NavLink, useHistory } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
+import { useSelector } from 'react-redux'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSignOutAlt } from '@fortawesome/free-solid-svg-icons'
 
 import classes from './header.module.css'
 import { removeAuthUser } from '../slices/authUser'
 
-export default function Header({ authUser }) {
+export default function Header() {
   const dispatch = useDispatch()
   const history = useHistory()
+
+  const authUser = useSelector((state) => state.authUser.value)
 
   const handleLogout = () => {
     // console.log('logged out')

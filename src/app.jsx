@@ -46,23 +46,20 @@ function App() {
         <Fragment>
           <Switch>
             <Route exact path="/">
-              <Header authUser={authUser} />
+              <Header />
               <Home />
             </Route>
             <Route exact path="/add">
-              <Header authUser={authUser} />
+              <Header />
               <NewPoll />
             </Route>
             <Route exact path="/leaderboard">
-              <Header authUser={authUser} />
+              <Header />
               <LeaderBoard />
             </Route>
             <Route exact path="/question/:qid">
-              <Header authUser={authUser} />
-              <PollAnswer authUser={authUser} />
-            </Route>
-            <Route exact path="/login">
-              <Redirect to="/" />
+              <Header />
+              <PollAnswer />
             </Route>
             <Route exact path="*">
               <NoMatch />

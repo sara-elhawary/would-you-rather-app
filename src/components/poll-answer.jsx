@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { useSelector } from 'react-redux'
-import { useParams } from 'react-router-dom'
+import { Redirect, useParams } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
 import { useHistory } from 'react-router-dom'
 
@@ -9,12 +9,13 @@ import PollResult from './poll-result'
 import { addAnswerToQuestion } from '../slices/questions'
 import { userAnswerQuestion } from '../slices/users'
 
-export default function PollAnswer({ authUser }) {
+export default function PollAnswer() {
   const dispatch = useDispatch()
 
   const [answer, setAnswer] = useState('')
   const [visible, setVisible] = useState(true)
   const questions = useSelector((state) => state.questions.value)
+  const authUser = useSelector((state) => state.authUser.value)
 
   const { qid } = useParams()
   // const id = '6ni6ok3ym7mf1p33lnez'
@@ -38,6 +39,8 @@ export default function PollAnswer({ authUser }) {
     dispatch(addAnswerToQuestion({ qid, authUser, answer }))
     dispatch(userAnswerQuestion({ qid, authUser, answer }))
   }
+
+  if (!authUser === author) return <Redirect to="/bad" />
 
   return (
     <div>
