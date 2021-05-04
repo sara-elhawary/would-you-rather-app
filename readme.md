@@ -4,15 +4,14 @@ Would You Rather is a fully responsive polling game that presents the user with 
 
 ![screenshot #1](public/screenshots/screenshot_1.jpeg)
 
-It's built with React, React-Redux, React Router, & ReduxJS/ToolKit.
-
 This app is the last of three projects required for FWD Egypt Initiative
 
 ## Table of contents
 
 - [Installation](#installation)
-- [Technologies](#technologies)
-- [Credits](#credits)
+- [Built with](#built with)
+- [Usage](#usage)
+- [Screenshots](#screenshots)
 
 ## Installation
 
@@ -23,6 +22,13 @@ $ git clone https://github.com/sara-elhawary/would-you-rather-app.git
 $ cd would-you-rather-app
 $ npm i
 ```
+
+## Built with
+
+- React
+- React-Redux
+- React Router
+- ReduxJS/ToolKit
 
 ## Usage
 
