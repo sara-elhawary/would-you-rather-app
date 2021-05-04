@@ -2,7 +2,7 @@
 
 Would You Rather is a fully responsive polling game that presents the user with a series of questions.
 
-![screenshot #1](public/screenshots/)
+![screenshot #1](public/screenshots/screenshot_1.jpeg)
 
 It's built with React, React-Redux, React Router, & ReduxJS/ToolKit.
 
@@ -30,4 +30,5 @@ The project can be viewed in the browser at
 
 ## Screenshots
 
-![screenshot #2](docs/assets/images/wyr76-small.jpg)
+![screenshot #2](public/screenshots/screenshot_2.jpeg)
+![screenshot #3](public/screenshots/screenshot_3.jpeg)
