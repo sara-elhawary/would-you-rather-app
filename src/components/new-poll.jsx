@@ -9,6 +9,7 @@ import { addQuestion } from '../slices/questions'
 
 export default function NewPoll(props) {
   const questions = useSelector((state) => state.questions.value)
+  const authUser = useSelector((state) => state.authUser.value)
 
   const [optionOne, setOptionOne] = useState('')
   const [optionTwo, setOptionTwo] = useState('')
@@ -29,7 +30,7 @@ export default function NewPoll(props) {
     const question = formatQuestion({
       optionOneText: optionOne,
       optionTwoText: optionTwo,
-      author: 'sarahedo',
+      author: authUser,
     })
     //dispatch(addQuestion)
     dispatch(addQuestion(question))

@@ -1,3 +1,143 @@
-.resultScore {
-  border: red solid 1px;
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+.container {
+  border: #d1cdcd solid 1px;
+  width: 41%;
+  margin: 40px auto;
+  border-radius: 8px;
+  font-family: 'Montserrat';
+  color: rgb(77, 73, 73);
+}
+.head {
+  background-color: #f4f4f4;
+  padding: 12px 8px;
+}
+.cardBody {
+  display: flex;
+}
+.imgDiv {
+  border-right: 1px solid #d1cdcd;
+  margin: 15px;
+}
+.authorAvatar {
+  width: 120px;
+  margin: 0 15px;
+}
+
+.resultDiv {
+  /* border: red solid 1px; */
+  margin: 10px;
+}
+.resultDiv h4 {
+  color: grey;
+  margin-bottom: 15px;
+  font-size: 14px;
+}
+.outerOptionOne {
+  border-top: 2px solid #767676;
+  border-radius: 8px;
+}
+.optionOne {
+  border: 1px solid #d1cdcd;
+  border-radius: 8px;
+  padding: 15px;
+  margin-bottom: 15px;
+  background-color: #f4f4f4;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.optionOne p {
+  margin-bottom: 5px;
+}
+
+.outerOptionTwo {
+  border-top: 2px solid #4dac37;
+  border-radius: 8px;
+}
+
+.optionTwo {
+  border: 1px solid #d1cdcd;
+  border-radius: 8px;
+  padding: 15px;
+  margin-bottom: 15px;
+  background-color: #f0fdf0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.optionTwo p {
+  margin-bottom: 5px;
+}
+.optionOnePrecent {
+  background-color: #ebe2e2;
+  height: 20px;
+  width: 90%;
+  margin: 15px 0 5px;
+  border-radius: 8px;
+  position: relative;
+  padding: 5px;
+}
+.optionTwoPrecent {
+  background-color: #ebe2e2;
+  height: 20px;
+  width: 90%;
+  margin: 15px 0 5px;
+  border-radius: 8px;
+  position: relative;
+  padding: 5px;
+}
+.optionOnePrecent span {
+  position: absolute;
+  left: 50%;
+  font-weight: 600;
+  color: white;
+}
+.optionTwoPrecent span {
+  position: absolute;
+  left: 50%;
+  font-weight: 600;
+  color: white;
+}
+
+.optionOneBar {
+  display: block;
+  height: 100%;
+  border-top-right-radius: 2px;
+  border-bottom-right-radius: 2px;
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+  background-color: #9c9898;
+}
+.optionTwoBar {
+  display: block;
+  height: 100%;
+  border-top-right-radius: 2px;
+  border-bottom-right-radius: 2px;
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+  background-color: #4dac37;
+}
+.resultDiv button {
+  margin: 15px 0 0 240px;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 20px;
+  color: rgb(77, 73, 73);
+  font-weight: 550;
+  background-color: #d6d0d0;
+}
+
+.userVote {
+  color: white;
+  background-color: #f2711b;
+  padding: 5px 8px;
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+  font-weight: 600;
+  position: absolute;
+  right: 401px;
+}
+.checkCircleIcon {
+  margin-left: 5px;
 }

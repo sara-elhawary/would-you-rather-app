@@ -6,21 +6,16 @@ import BoardCard from '../components/board-card'
 
 export default function LeaderBoard() {
   const users = Object.values(useSelector((state) => state.users.value))
-  // console.log(users)
-
+  console.log(users)
   return (
     <div>
       {users.length > 0 &&
         users
-          .map((userId) => ({
-            id: userId,
-            name: users[userId].name,
-            avatarURL: users[userId].avatarURL,
-            answeredQuestions: Object.keys(users[userId].answers).length,
-            createdQuestions: users[userId].questions.length,
-            score:
-              Object.keys(users[userId].answers).length +
-              users[userId].questions.length,
+          .map((user) => ({
+            ...user,
+            answeredQuestions: Object.keys(user.answers).length,
+            createdQuestions: user.questions.length,
+            score: Object.keys(user.answers).length + user.questions.length,
           }))
           .sort(sortBy('-score'))
           .map((user) => (

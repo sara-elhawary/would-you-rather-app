@@ -15,12 +15,12 @@ export const usersSlice = createSlice({
 
       state.value[author].questions.push(id)
     },
-    addAnswerToQuestion: (state, action) => {
-      const authedUser = action.payload.authedUser
+    userAnswerQuestion: (state, action) => {
+      const authUser = action.payload.authUser
       const qid = action.payload.qid
       const answer = action.payload.answer
 
-      state.value[authedUser].answers = {
+      state.value[authUser].answers = {
         [qid]: answer,
       }
     },
@@ -30,7 +30,7 @@ export const usersSlice = createSlice({
 export const {
   setUsers,
   addQuestionToUser,
-  addAnswerToQuestion,
+  userAnswerQuestion,
 } = usersSlice.actions
 
 export default usersSlice.reducer

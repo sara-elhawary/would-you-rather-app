@@ -1,33 +1,72 @@
-import React, { useEffect } from 'react'
+import React, { useState } from 'react'
 import { useSelector } from 'react-redux'
+import sortBy from 'sort-by'
 
+import AnsweredPoll from '../components/answered-poll'
 import Poll from '../components/poll'
 import classes from './home.module.css'
 
 export default function Home() {
-  //users cuz of reducer name
-  const users = Object.values(useSelector((state) => state.users.value))
+  const [showDefault, setShowDefault] = useState(true)
+  const authUser = useSelector((state) => state.authUser.value)
   const questions = Object.values(useSelector((state) => state.questions.value))
   // console.log(questions)
-  console.log(users)
+
+  const answeredQuestions = questions
+    .sort(sortBy('-timestamp'))
+    .filter(
+      (question) =>
+        question.optionOne.votes.includes(authUser) ||
+        question.optionTwo.votes.includes(authUser)
+    )
+  const unAnsweredQuestions = questions
+    .sort(sortBy('-timestamp'))
+    .filter(
+      (question) =>
+        !question.optionOne.votes.includes(authUser) &&
+        !question.optionTwo.votes.includes(authUser)
+    )
+
+  const handleUnansweredSection = () => {
+    setShowDefault(true)
+  }
+  const handleAnsweredSection = () => {
+    setShowDefault(false)
+  }
 
   return (
     <div className={classes.container}>
       <div className={classes.btns}>
-        <button className={classes.unansweredBtn}>Unanswered</button>
-        <button className={classes.answeredBtn}>Answered</button>
+        <button
+          className={classes.unansweredBtn}
+          onClick={handleUnansweredSection}
+        >
+          Unanswered
+        </button>
+        <button className={classes.answeredBtn} onClick={handleAnsweredSection}>
+          Answered
+        </button>
       </div>
-      {/* {JSON.stringify(users, null, 2)} */}
       <div className={classes.polls}>
-        {questions.map((question) => (
-          <Poll
-            author={question.author}
-            key={question.id}
-            id={question.id}
-            optionOne={question.optionOne.text}
-            optionTwo={question.optionTwo.text}
-          />
-        ))}
+        {showDefault
+          ? unAnsweredQuestions.map((question) => (
+              <Poll
+                author={question.author}
+                key={question.id}
+                id={question.id}
+                optionOne={question.optionOne.text}
+                optionTwo={question.optionTwo.text}
+              />
+            ))
+          : answeredQuestions.map((question) => (
+              <AnsweredPoll
+                author={question.author}
+                key={question.id}
+                id={question.id}
+                optionOne={question.optionOne.text}
+                optionTwo={question.optionTwo.text}
+              />
+            ))}
       </div>
     </div>
   )
