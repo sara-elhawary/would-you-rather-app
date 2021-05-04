@@ -21,9 +21,8 @@ import PollAnswer from './components/poll-answer'
 function App() {
   const dispatch = useDispatch()
   const state = useSelector((state) => state)
-  // const authUser = useSelector((state) => state.authUser.value)
-  const authUser = 'sarahedo'
-  // console.log(authUser)
+  const authUser = useSelector((state) => state.authUser.value)
+  console.log(authUser)
 
   // console.log(state)
 
@@ -36,7 +35,7 @@ function App() {
 
   return (
     <BrowserRouter>
-      {authUser === null ? (
+      {authUser === '' ? (
         <Fragment>
           <Route exact path="/login">
             <Login />
@@ -45,22 +44,28 @@ function App() {
         </Fragment>
       ) : (
         <Fragment>
-          <Header authUser={authUser} />
           <Switch>
-            <Route exact path="/404">
-              <NoMatch />
-            </Route>
             <Route exact path="/">
+              <Header authUser={authUser} />
               <Home />
             </Route>
-            <Route exact path="/new-poll">
+            <Route exact path="/add">
+              <Header authUser={authUser} />
               <NewPoll />
             </Route>
-            <Route exact path="/leader-board">
+            <Route exact path="/leaderboard">
+              <Header authUser={authUser} />
               <LeaderBoard />
             </Route>
-            <Route exact path="/question/:id">
-              <PollAnswer />
+            <Route exact path="/question/:qid">
+              <Header authUser={authUser} />
+              <PollAnswer authUser={authUser} />
+            </Route>
+            <Route exact path="/login">
+              <Redirect to="/" />
+            </Route>
+            <Route exact path="*">
+              <NoMatch />
             </Route>
           </Switch>
         </Fragment>

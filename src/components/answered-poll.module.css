@@ -1,0 +1,55 @@
+.container {
+  border-top: solid 2px #2285d0;
+  border-radius: 8px;
+  /* width: 35%; */
+  font-family: 'Montserrat';
+  margin-bottom: 15px;
+}
+.userCard {
+  border: #d1cdcd solid 1px;
+  border-radius: 8px;
+  width: 100%;
+  overflow: hidden;
+  font-family: 'Montserrat';
+}
+.cardHeader {
+  /* border: red solid 1px; */
+  background-color: #f3f4f5;
+}
+.head {
+  margin: 0;
+  padding: 12px 8px;
+}
+.cardBody {
+  border-top: #d1cdcd solid 1px;
+  /* border: red solid 1px; */
+  display: flex;
+  padding: 15px 12px 10px;
+  /* background-color: white; */
+  width: 100%;
+}
+.userAvatar {
+  width: 120px;
+  margin-right: 30px;
+  /* border: red solid 1px; */
+}
+.qInfo {
+  border-left: #d1cdcd solid 1px;
+  /* border: red solid 1px; */
+  padding-left: 15px;
+  width: 100%;
+}
+.qInfo p {
+  margin: 20px 0;
+}
+
+.qInfo button {
+  color: white;
+  background-color: #2285d0;
+  border: none;
+  border-radius: 8px;
+  width: 90%;
+  font-weight: 700;
+  padding: 10px 0;
+  font-size: 18px;
+}
