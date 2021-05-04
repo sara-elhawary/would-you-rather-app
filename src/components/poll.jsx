@@ -9,7 +9,7 @@ import PollResult from './poll-result'
 export default function Poll(props) {
   // const [step, setStep] = useState('body')
   // console.log(props)
-  const { author, id, optionOne, optionTwo } = props
+  const { author, id, optionOne } = props
   // console.log(avatar)
 
   return (

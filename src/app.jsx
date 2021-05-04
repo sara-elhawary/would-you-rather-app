@@ -61,6 +61,9 @@ function App() {
               <Header />
               <PollAnswer />
             </Route>
+            <Route exact path="/login">
+              <Redirect to="/" />
+            </Route>
             <Route exact path="*">
               <NoMatch />
             </Route>
