@@ -1,11 +1,22 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useHistory } from 'react-router-dom'
+import { useDispatch } from 'react-redux'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSignOutAlt } from '@fortawesome/free-solid-svg-icons'
 
 import classes from './header.module.css'
+import { removeAuthUser } from '../slices/authUser'
 
 export default function Header({ authUser }) {
+  const dispatch = useDispatch()
+  const history = useHistory()
+
+  const handleLogout = () => {
+    // console.log('logged out')
+    dispatch(removeAuthUser())
+    history.push('/login')
+  }
+
   return (
     <div className={classes.header}>
       <ul className={classes.menu}>
@@ -14,19 +25,15 @@ export default function Header({ authUser }) {
             Home
           </Link>
         </li>
+
         <li className={classes.menuItem}>
-          <Link className={classes.link} to="/new-poll">
+          <Link className={classes.link} to="/add">
             New Poll
           </Link>
         </li>
         <li className={classes.menuItem}>
-          <Link className={classes.link} to="/leader-board">
+          <Link className={classes.link} to="/leaderboard">
             Leader Board
-          </Link>
-        </li>
-        <li className={classes.menuItem}>
-          <Link className={classes.link} to="/404">
-            404
           </Link>
         </li>
       </ul>
@@ -38,7 +45,7 @@ export default function Header({ authUser }) {
           />
           <span>{authUser}</span>
         </div>
-        <div className={classes.logout}>
+        <div className={classes.logout} onClick={handleLogout}>
           <p className={classes.logoutBtn}>Logout</p>
           <div className={classes.iconDiv}>
             <FontAwesomeIcon
