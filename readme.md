@@ -8,6 +8,12 @@ It's built with React, React-Redux, React Router, & ReduxJS/ToolKit.
 
 This app is the last of three projects required for FWD Egypt Initiative
 
+## Table of contents
+
+- [Installation](#installation)
+- [Technologies](#technologies)
+- [Credits](#credits)
+
 ## Installation
 
 Clone the repository, change directories, and use NPM to install the dependencies.
